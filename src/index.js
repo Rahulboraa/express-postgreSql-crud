@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import pool from "./config/database.js";
 import userRoutes from "./routes/userRoute.js";
 import errorHandling from "./middlewares/errorHandler.js";
+import createUserTable from "./data/createUserTable.js";
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,9 @@ app.use("/api", userRoutes);
 
 //  Error handling middleware
 app.use(errorHandling);
+
+// Create Table Before Starting Server
+createUserTable();
 
 app.get("/", async (req, res, next) => {
   try {
