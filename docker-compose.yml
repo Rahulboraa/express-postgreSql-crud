@@ -7,7 +7,7 @@ services:
     environment:
       - DB_USER=postgres
       - DB_HOST=postgres-db
-      - DB_NAME=your_database_name
+      - DB_NAME=express_crud
       - DB_PORT=5432
       - DB_PASSWORD=user
     depends_on:
@@ -22,7 +22,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=user
-      - POSTGRES_DB=your_database_name
+      - POSTGRES_DB=express_crud
     volumes:
       - postgres-data:/var/lib/postgresql/data
     networks:
